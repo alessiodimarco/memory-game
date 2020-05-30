@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	var cardsChosenId = [];
 	const cardsWon = [];
 
-	/*Foreach statement used to create cards , we assign the click event listener*/
+	//Foreach statement used to create cards , we assign the click event listener
 	cardArr.forEach((item, i) => {
 		var card = document.createElement('img');
 		card.setAttribute('src', 'images/back.png');
