@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-	//My card name and img array for 6 cards
+	//My array with cards' names and path of each image
 	var cardArr = [{
 			name: 'medusa',
 			img: 'images/medusa.png'
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		return res.concat([item, item]);
 	}, []);
 
-	//array random sort
+	//We apply random sort
 	cardArr.sort(order => 0.5 - Math.random());
 
 	var grid = document.getElementById('grid');
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	var cardsChosenId = [];
 	const cardsWon = [];
 
-	/*Foreach statement used to create cards and assign the click event listener*/
+	/*Foreach statement used to create cards , we assign the click event listener*/
 	cardArr.forEach((item, i) => {
 		var card = document.createElement('img');
 		card.setAttribute('src', 'images/back.png');
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		card.addEventListener('click', flipCard);
 	});
 
-	//flip your card
+	//Flip your card
 	function flipCard() {
 		var cardId = this.getAttribute('id-card');
 		cardsChosen.push(cardArr[cardId].name);
@@ -56,18 +56,18 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
-	//check for matches
+	//Check for matches
 	function checkForMatch() {
 		var cards = document.querySelectorAll('img');
 		const idFirst = cardsChosenId[0];
 		const idSecond = cardsChosenId[1];
 		//if player click same card two times..
 		if (idFirst == idSecond) {
-			//Flip back the selected wrong cards
+			//Flip back if you select the wrong card
 			cards[idFirst].setAttribute('src', 'images/back.png');
-			alert('You cannot select the same card!!')
+			alert('You cannot select the same card!!');
 		} else if (cardsChosen[0] == cardsChosen[1]) {
-			alert('You found a match')
+			alert('You found a match');
 			cards[idFirst].setAttribute('src', 'images/white.png');
 			cards[idSecond].setAttribute('src', 'images/white.png');
 			cards[idFirst].removeEventListener('click', flipCard);
