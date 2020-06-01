@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 	//My array with cards' names and path of each image
-	var cardArr = [{
+	let cardArr = [{
 			name: 'medusa',
 			img: 'images/medusa.png'
 		}, {
@@ -30,15 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	//We apply random sort
 	cardArr.sort(order => 0.5 - Math.random());
 
-	var grid = document.getElementById('grid');
-	var result = document.getElementById('result');
-	var cardsChosen = [];
-	var cardsChosenId = [];
+	let grid = document.getElementById('grid');
+	let result = document.getElementById('result');
+	let cardsChosen = [];
+	let cardsChosenId = [];
 	const cardsWon = [];
 
 	//Foreach statement used to create cards , we assign the click event listener
 	cardArr.forEach((item, i) => {
-		var card = document.createElement('img');
+		let card = document.createElement('img');
 		card.setAttribute('src', 'images/back.png');
 		card.setAttribute('id-card', i);
 		grid.appendChild(card);
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	//Flip your card
 	function flipCard() {
-		var cardId = this.getAttribute('id-card');
+		let cardId = this.getAttribute('id-card');
 		cardsChosen.push(cardArr[cardId].name);
 		cardsChosenId.push(cardId);
 		this.setAttribute('src', cardArr[cardId].img);
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	//Check for matches
 	function checkForMatch() {
-		var cards = document.querySelectorAll('img');
+		let cards = document.querySelectorAll('img');
 		const idFirst = cardsChosenId[0];
 		const idSecond = cardsChosenId[1];
 		//if player click same card two times..
