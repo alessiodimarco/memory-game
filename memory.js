@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
 	//My array with cards' names and path of each image
 	let cardArr = [{
@@ -46,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	//Flip your card
-	function flipCard() {
+	const flipCard = () => {
 		let cardId = this.getAttribute('id-card');
 		cardsChosen.push(cardArr[cardId].name);
 		cardsChosenId.push(cardId);
@@ -57,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	//Check for matches
-	function checkForMatch() {
+	const checkForMatch = () => {
 		let cards = document.querySelectorAll('img');
 		const idFirst = cardsChosenId[0];
 		const idSecond = cardsChosenId[1];
