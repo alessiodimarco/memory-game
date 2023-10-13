@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
 	//My array with cards' names and path of each image
 	let cardArr = [{
