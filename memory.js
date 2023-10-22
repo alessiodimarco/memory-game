@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	];
 
+	//test
+
 	//Now we duplicate each element to make pairs
 	cardArr = cardArr.reduce((res, item) => {
 		return res.concat([item, item]);
